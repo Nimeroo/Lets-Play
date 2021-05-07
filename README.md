@@ -7,51 +7,44 @@ App Description: Lets Play allows the user to generate games based on the genres
 API Snippet:
 
 
-            `{
-            "id": 3498,
+`"records": 
+[
+        {
+            "id": "recApNyvg9eXYvbIw",
+            
+            "fields": {
+            
+                "name": "Grand Theft Auto V",
+                
+                "images": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a5/Grand_Theft_Auto_V.png/220px-Grand_Theft_Auto_V.png",
+                
+                "platforms": [
+                
+                    "PlayStation 5",
+                    
+                    "PlayStation 4",
+                    
+                    "PlayStation 3",
+                    
+                    "PC",
+                    
+                    "Xbox One",
+                    
+                    "Xbox 360",
+                    
+                    "Xbox Series X "   
+                ],
+                "developer": "Rockstar North",
+                
+                "genres": [
+                
+                    "Action",
+                    
+                    "Adventure"
+                    
+                ]
+            }`
 
-            "slug": "grand-theft-auto-v",
-
-            "name": "Grand Theft Auto V",
-
-            "released": "2013-09-17",
-
-            "tba": false,
-
-            "background_image": "https://media.rawg.io/media/games/84d/84da2ac3fdfc6507807a1808595afb12.jpg",
-
-            "rating": 4.48,
-
-            "rating_top": 5,
-
-            "ratings": [
-                {
-                    "id": 5,
-
-                    "title": "exceptional",
-
-                    "count": 2810,
-
-                    "percent": 59.16
-                },
-                {
-                    "id": 4,
-
-                    "title": "recommended",
-
-                    "count": 1563,
-
-                    "percent": 32.91
-
-                },
-                {
-                    "id": 3,
-
-                    "title": "meh",
-
-                    "count": 300,
-
-                    "percent": 6.32.....etc`
 
 
 [Webpage Home Wireframe](https://wireframe.cc/t2SnRn)
