@@ -52,10 +52,15 @@ API Snippet:
 
 
 [Webpage Home Wireframe](https://wireframe.cc/t2SnRn)
+
 [Mobile Home Wireframe](https://wireframe.cc/usQlOa)
+
 [Webpage More Info Wireframe ](https://wireframe.cc/zLUFzw)
+
 [Mobile More Info Wireframe](https://wireframe.cc/BUte1w)
+
 [Component Hierarchy](https://embed.creately.com/zgxACk1aQ23?token=KrxoM5SFlQIEdEYq&type=svg)
+
 MVP: 
 
 - Search Games by user input and display games whose titles match the search query.
