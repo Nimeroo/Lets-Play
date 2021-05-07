@@ -5,6 +5,7 @@ App Title: Lets Play
 App Description: Lets Play allows the user to generate games based on the genres that they choose. Users are also able to search for games they are interested in as they will recieve the platforms, ratings, and tags for whatever game they choose. Lastly the app will also contain a "bored" button which upon being clicked on will display a random game for the user to become interested in and maybe play.
 
 API Snippet:
+
 `{
             "id": 3498,
 
