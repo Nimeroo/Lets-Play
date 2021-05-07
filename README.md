@@ -46,7 +46,8 @@ API Snippet:
                     
                     "Adventure"
                     
-                ]
+                ],
+                "rating": "4.45"
             }`
 
 
