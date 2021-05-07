@@ -61,12 +61,16 @@ API Snippet:
 
 [Component Hierarchy](https://embed.creately.com/zgxACk1aQ23?token=KrxoM5SFlQIEdEYq&type=svg)
 
+[Webpage Form Wireframe](https://wireframe.cc/mful5v)
+
+[Mobile Form Wireframe](https://wireframe.cc/KeUAQN)
+
 MVP: 
 
-- Search Games by user input and display games whose titles match the search query.
-- Clicking on displayed Games displays additional information.
+- Search games by user input and display games whose titles match the search query.
+- Clicking on displayed games displays additional information.
 - Displaying games that contain the genres that are clicked.
-- Add comment for people to give opinions on games.
+- Add new games to game list with all the same options.
 
 Post-MVP: 
 
