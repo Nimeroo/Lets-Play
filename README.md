@@ -6,7 +6,8 @@ App Description: Lets Play allows the user to generate games based on the genres
 
 API Snippet:
 
-`{
+
+            `{
             "id": 3498,
 
             "slug": "grand-theft-auto-v",
