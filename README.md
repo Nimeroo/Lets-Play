@@ -7,7 +7,8 @@ App Description: Lets Play allows the user to generate games based on the genres
 API Snippet:
 
 
-`"records": 
+`
+"records": 
 
         [
         
