@@ -11,11 +11,7 @@ function Genres(props) {
   console.log(compareCatagories("Adventure"));
   return (
     <div>
-      <Link to="/">
-        <button onClick={() => compareCatagories("Adventure")}>
-          Adventure
-        </button>
-      </Link>
+      <button onClick={() => compareCatagories("Adventure")}>Adventure</button>
       <button onClick={() => compareCatagories("Action")}>Action</button>
       <button onClick={() => compareCatagories("RPG")}>RPG</button>
       <button onClick={() => compareCatagories("FPS")}>FPS</button>
