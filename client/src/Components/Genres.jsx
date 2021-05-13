@@ -1,14 +1,19 @@
 import { useParams, Link } from "react-router-dom";
 
 function Genres(props) {
+  const games = props.games;
   const compareCatagories = (catagory) => {
-    const filteredGames = props.games.filter((game) => {
+    const filteredGames = games.filter((game) => {
       return game.fields.genres.includes(catagory);
     });
-    return filteredGames;
+    if (filteredGames.length < games.length) {
+      props.filteredGames(games);
+      props.filteredGames(filteredGames);
+    } else {
+      props.filteredGames(filteredGames);
+    }
   };
 
-  console.log(compareCatagories("Adventure"));
   return (
     <div>
       <button onClick={() => compareCatagories("Adventure")}>Adventure</button>
@@ -25,7 +30,7 @@ function Genres(props) {
       <button onClick={() => compareCatagories("Social")}>Social</button>
       <button onClick={() => compareCatagories("Fighter")}>Fighter</button>
       <button onClick={() => compareCatagories("Sandbox")}>Sandbox</button>
-      <button onClick={() => compareCatagories("Platform games")}>
+      <button onClick={() => compareCatagories("Platform game")}>
         Platformer
       </button>
     </div>

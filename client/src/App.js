@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Genres from "./Genres.jsx";
-import GamesHome from "./GamesHome.jsx";
+import Genres from "./Components/Genres.jsx";
+import GamesHome from "./Components/GamesHome.jsx";
+import Form from "./Components/Form.jsx";
 import "./App.css";
 import { Route } from "react-router";
 
@@ -24,7 +25,12 @@ function App() {
 
   return (
     <div>
-      <Genres games={gameList} />
+      <Route path="/game-form">
+        <Form />
+      </Route>
+      <Route exact path="/">
+        <Genres filteredGames={setGameList} games={gameList} />
+      </Route>
       <Route exact path="/">
         <GamesHome games={gameList} />
       </Route>
