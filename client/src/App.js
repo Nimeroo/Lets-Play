@@ -24,7 +24,7 @@ function App() {
   console.log(gameList);
 
   return (
-    <div>
+    <div className="main">
       <Route path="/game-form">
         <Form />
       </Route>

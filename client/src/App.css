@@ -1,12 +1,123 @@
-.game-list-images {
+html {
+  background-color: #18191a;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-items: center;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.game-list {
+  display: flex;
+  justify-content: right;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.game-display-container {
+  margin: 30px;
+  display: flex;
+  background-color: black;
+  border: solid;
+  color: brown;
+  border-color: brown;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 300px;
-  width: 300px;
+  width: 250px;
+  border-width: 1px;
+  border-radius: 4px;
+  box-shadow: 2px 2px brown;
+}
+
+.game-list-images {
+  height: 150px;
+  width: 150px;
+}
+
+.genre-list {
+  display: flex;
+  flex-direction: column;
+  justify-self: left;
+  width: 190px;
+  height: 100%;
+  background-color: black;
+}
+
+.genre-button {
+  color: brown;
+  background-color: black;
+  border: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: brown;
+  margin: 55px;
+}
+
+#new-game-button {
+  color: brown;
+  background-color: black;
+  width: 100px;
+  height: 100px;
+  border: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: brown;
+}
+
+#new-game-button-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: inherit;
+  height: inherit;
 }
 
 .form {
   display: flex;
-  align-content: center;
+  color: brown;
+  align-items: center;
+  justify-items: center;
   flex-direction: column;
-  align-content: space-around;
-  padding: auto;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 20px;
+}
+
+.form > * {
+  margin: 30px;
+}
+
+#game-submit-button {
+  color: brown;
+  background-color: black;
+  border: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: brown;
 }

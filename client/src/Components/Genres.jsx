@@ -15,22 +15,65 @@ function Genres(props) {
   };
 
   return (
-    <div>
-      <button onClick={() => compareCatagories("Adventure")}>Adventure</button>
-      <button onClick={() => compareCatagories("Action")}>Action</button>
-      <button onClick={() => compareCatagories("RPG")}>RPG</button>
-      <button onClick={() => compareCatagories("FPS")}>FPS</button>
-      <button onClick={() => compareCatagories("TPS")}>TPS</button>
-      <button onClick={() => compareCatagories("Battle Royale")}>
+    <div className="genre-list">
+      <button
+        className="genre-button"
+        onClick={() => compareCatagories("Adventure")}
+      >
+        Adventure
+      </button>
+      <button
+        className="genre-button"
+        onClick={() => compareCatagories("Action")}
+      >
+        Action
+      </button>
+      <button className="genre-button" onClick={() => compareCatagories("RPG")}>
+        RPG
+      </button>
+      <button className="genre-button" onClick={() => compareCatagories("FPS")}>
+        FPS
+      </button>
+      <button className="genre-button" onClick={() => compareCatagories("FPS")}>
+        FPS
+      </button>
+      <button className="genre-button" onClick={() => compareCatagories("TPS")}>
+        TPS
+      </button>
+      <button
+        className="genre-button"
+        onClick={() => compareCatagories("Battle Royale")}
+      >
         Battle Royale
       </button>
-      <button onClick={() => compareCatagories("Simulation")}>
+      <button
+        className="genre-button"
+        onClick={() => compareCatagories("Simulation")}
+      >
         Simulation
       </button>
-      <button onClick={() => compareCatagories("Social")}>Social</button>
-      <button onClick={() => compareCatagories("Fighter")}>Fighter</button>
-      <button onClick={() => compareCatagories("Sandbox")}>Sandbox</button>
-      <button onClick={() => compareCatagories("Platform game")}>
+      <button
+        className="genre-button"
+        onClick={() => compareCatagories("Social")}
+      >
+        Social
+      </button>
+      <button
+        className="genre-button"
+        onClick={() => compareCatagories("Fighter")}
+      >
+        Fighter
+      </button>
+      <button
+        className="genre-button"
+        onClick={() => compareCatagories("Sandbox")}
+      >
+        Sandbox
+      </button>
+      <button
+        className="genre-button"
+        onClick={() => compareCatagories("Platform game")}
+      >
         Platformer
       </button>
     </div>

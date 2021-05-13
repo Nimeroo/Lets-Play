@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 function Form() {
   const [gameName, setGameName] = useState("");
   const [gameImage, setGameImage] = useState("");
-  const [gamePlatforms, setGamePlatforms] = useState([]);
+  const [gamePlatforms, setGamePlatforms] = useState("");
   const [gameDevelop, setGameDevelop] = useState("");
-  const [gameGenres, setGameGenres] = useState([]);
+  const [gameGenres, setGameGenres] = useState("");
+  const [gameRating, setGameRating] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,17 +19,22 @@ function Form() {
       platforms: gamePlatforms,
       developer: gameDevelop,
       genres: gameGenres,
+      rating: gameRating,
     };
 
     await axios.post(
-      "https://api.airtable.com/v0/appWBDWQi6vOuApxc/Table%201?api_key=" +
-        process.env.REACT_APP_AIRTABLE_API_KEY,
-      newGame
+      "https://api.airtable.com/v0/appWBDWQi6vOuApxc/Table%201",
+      { fields: newGame },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+        },
+      }
     );
   };
 
   return (
-    <div>
+    <div className="form-container">
       <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="game-name">Game Name:</label>
         <input
@@ -70,8 +76,17 @@ function Form() {
           value={gameGenres}
           onChange={(e) => setGameGenres(e.target.value)}
         />
-
-        <button type="submit">Submit your game!</button>
+        <label htmlFor="game-rating">Game rating:</label>
+        <input
+          type="text"
+          name="gameGenres"
+          id="game-rating"
+          value={gameRating}
+          onChange={(e) => setGameRating(e.target.value)}
+        />
+        <button id="game-submit-button" type="submit">
+          Submit your game!
+        </button>
       </form>
     </div>
   );

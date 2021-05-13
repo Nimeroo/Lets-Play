@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 function GamesHome(props) {
   const gameSection = props.games.map((game) => {
     return (
-      <div>
+      <div className="game-display-container">
         <h3>{game.fields.name}</h3>
         <img className="game-list-images" src={game.fields.images}></img>
       </div>
     );
   });
   return (
-    <div>
+    <div className="game-list">
       {gameSection}
-      <Link to="/game-form">
-        <button>Add New Game</button>
+      <Link id="new-game-button-container" to="/game-form">
+        <button id="new-game-button">+</button>
       </Link>
     </div>
   );
