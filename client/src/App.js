@@ -26,11 +26,11 @@ function App() {
 
   return (
     <div className="main">
+      <Route path="/game-form">
+        <Form />
+      </Route>
       <Route exact path="/:name">
         <Details gameList={gameList} />
-      </Route>
-      <Route exact path="/game-form">
-        <Form />
       </Route>
       <Route exact path="/">
         <Genres filteredGames={setGameList} games={gameList} />

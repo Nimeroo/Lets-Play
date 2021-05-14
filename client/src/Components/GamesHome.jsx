@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 function GamesHome(props) {
   const gameSection = props.games.map((game) => {
@@ -6,8 +6,7 @@ function GamesHome(props) {
       <div>
         <Link to={`/${game.fields.name}`}>
           <div className="game-display-container">
-            <h3>{game.fields.name}</h3>
-
+            <h3 id="game-title">{game.fields.name}</h3>
             <img className="game-list-images" src={game.fields.images}></img>
           </div>
         </Link>
@@ -15,11 +14,17 @@ function GamesHome(props) {
     );
   });
   return (
-    <div className="game-list">
-      {gameSection}
-      <Link id="new-game-button-container" to="/game-form">
-        <button id="new-game-button">+</button>
-      </Link>
+    <div id="home-container">
+      <header>
+        <h1>Lets-Play!</h1>
+      </header>
+      <div className="game-list">
+        {gameSection}
+        <Link id="new-game-button-container" to="/game-form">
+          <button id="new-game-button">+</button>
+        </Link>
+      </div>
+      <footer></footer>
     </div>
   );
 }

@@ -34,9 +34,6 @@ function Genres(props) {
       <button className="genre-button" onClick={() => compareCatagories("FPS")}>
         FPS
       </button>
-      <button className="genre-button" onClick={() => compareCatagories("FPS")}>
-        FPS
-      </button>
       <button className="genre-button" onClick={() => compareCatagories("TPS")}>
         TPS
       </button>

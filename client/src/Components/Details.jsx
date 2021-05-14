@@ -3,7 +3,8 @@ import { Link, useParams } from "react-router-dom";
 
 function Details(props) {
   const params = useParams();
-  const game = props.gameList.find((currGame) => {
+  const gameList = props.gameList;
+  const game = gameList.find((currGame) => {
     return currGame.fields.name === params.name;
   });
   return (

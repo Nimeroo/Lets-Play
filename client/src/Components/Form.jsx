@@ -84,9 +84,11 @@ function Form() {
           value={gameRating}
           onChange={(e) => setGameRating(e.target.value)}
         />
-        <button id="game-submit-button" type="submit">
-          Submit your game!
-        </button>
+        <Link to="/">
+          <button id="game-submit-button" type="submit">
+            Submit your game!
+          </button>
+        </Link>
       </form>
     </div>
   );
