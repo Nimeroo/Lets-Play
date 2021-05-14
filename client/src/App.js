@@ -3,6 +3,7 @@ import axios from "axios";
 import Genres from "./Components/Genres.jsx";
 import GamesHome from "./Components/GamesHome.jsx";
 import Form from "./Components/Form.jsx";
+import Details from "./Components/Details.jsx";
 import "./App.css";
 import { Route } from "react-router";
 
@@ -25,7 +26,10 @@ function App() {
 
   return (
     <div className="main">
-      <Route path="/game-form">
+      <Route exact path="/:name">
+        <Details gameList={gameList} />
+      </Route>
+      <Route exact path="/game-form">
         <Form />
       </Route>
       <Route exact path="/">

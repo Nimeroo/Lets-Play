@@ -18,8 +18,8 @@ body {
 
 .main {
   display: flex;
-  align-items: center;
   justify-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
 }
@@ -114,6 +114,30 @@ body {
 }
 
 #game-submit-button {
+  color: brown;
+  background-color: black;
+  border: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: brown;
+}
+
+.show-info {
+  display: flex;
+  color: brown;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+#game-image {
+  width: 500px;
+  height: 400px;
+}
+
+#home-button {
   color: brown;
   background-color: black;
   border: solid;
