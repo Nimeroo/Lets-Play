@@ -29,7 +29,7 @@ function App() {
       <Route path="/game-form">
         <Form />
       </Route>
-      <Route exact path="/:name">
+      <Route exact path="./:name">
         <Details gameList={gameList} />
       </Route>
       <Route exact path="/">
