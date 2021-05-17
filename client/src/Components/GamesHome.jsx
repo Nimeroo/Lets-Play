@@ -1,10 +1,12 @@
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Header from "./Header.jsx";
+import Footer from "./Footer.jsx";
 
 function GamesHome(props) {
   const gameSection = props.games.map((game) => {
     return (
       <div>
-        <Link to={`/${game.fields.name}`}>
+        <Link className="gameContainerLink" to={`/${game.fields.name}`}>
           <div className="game-display-container">
             <h3 id="game-title">{game.fields.name}</h3>
             <img className="game-list-images" src={game.fields.images}></img>
@@ -15,16 +17,14 @@ function GamesHome(props) {
   });
   return (
     <div id="home-container">
-      <header>
-        <h1>Lets-Play!</h1>
-      </header>
+      <Header />
       <div className="game-list">
         {gameSection}
         <Link id="new-game-button-container" to="/game-form">
           <button id="new-game-button">+</button>
         </Link>
       </div>
-      <footer></footer>
+      <Footer />
     </div>
   );
 }

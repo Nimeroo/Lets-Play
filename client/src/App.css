@@ -69,8 +69,11 @@ header {
   box-shadow: 2px 2px brown;
 }
 
-#game-title {
+.gameContainerLink {
   text-decoration: none;
+}
+
+#game-title {
   text-align: center;
 }
 
@@ -181,6 +184,26 @@ header {
 footer {
   height: 10px;
   width: 100%;
+  color: brown;
   background-color: black;
   position: absolute;
+}
+
+@media only screen and (max-width: 1820px) {
+  .game-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .genre-list {
+    flex-direction: column;
+    justify-self: left;
+    width: 100px;
+    height: 100%;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: row;
+  }
 }
