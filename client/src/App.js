@@ -1,28 +1,47 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import Genres from "./Components/Genres.jsx";
-import GamesHome from "./Components/GamesHome.jsx";
-import Form from "./Components/Form.jsx";
-import Details from "./Components/Details.jsx";
+import Genres from "./Components/Genres/Genres.jsx";
+import GamesHome from "./Screens/GamesHome/GamesHome.jsx";
+import Form from "./Screens/NewGameForm/NewGameForm.jsx";
+import Details from "./Screens/GameDetails/GameDetails.jsx";
 import "./App.css";
 import { Route } from "react-router";
+import {
+  loginUser,
+  registerUser,
+  removeToken,
+  verifyUser,
+} from "./services/auth";
 
-const API_KEY = process.env.REACT_APP_AIRTABLE_API_KEY;
-const url = "https://api.airtable.com/v0/appWBDWQi6vOuApxc/Table%201?api_key=";
 
 function App() {
-  const [gameList, setGameList] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
+  let history = useHistory();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const resp = await axios.get(url + API_KEY);
-      const gameArr = resp.data.records;
-      setGameList(gameArr);
+    const handleVerify = async () => {
+      const userData = await verifyUser();
+      setCurrentUser(userData);
     };
-    fetchData();
+    handleVerify();
   }, []);
 
-  console.log(gameList);
+  const handleSignUp = async (formData) => {
+    const userData = await registerUser(formData);
+    setCurrentUser(userData);
+    history.push("/");
+  };
+
+  const handleLogin = async (formData) => {
+    const userData = await loginUser(formData);
+    setCurrentUser(userData);
+    history.push("/");
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem("authToken");
+    removeToken();
+  };
 
   return (
     <div className="main">
