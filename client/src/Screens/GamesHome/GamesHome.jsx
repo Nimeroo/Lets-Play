@@ -1,31 +1,28 @@
 import { Link } from "react-router-dom";
-import Header from "../../Components/Header/Header.jsx";
-import Footer from "../../Components/Footer/Footer.jsx";
+import { useEffect, useState } from "react";
+import { getGames } from "../../services/games.js";
 import Games from "../../Components/Games/Games.jsx"
 
-function GamesHome(props) {
-  const gameSection = props.games.map((game) => {
-    return (
-      <div>
-        <Link className="gameContainerLink" to={`/${game.fields.name}`}>
-          <div className="game-display-container">
-            <h3 id="game-title">{game.fields.name}</h3>
-            <img className="game-list-images" src={game.fields.images}></img>
-          </div>
-        </Link>
-      </div>
-    );
-  });
+function GamesHome() {
+
+  const [games, setGames] = useState([])
+
+  useEffect(() => {
+    const fetchGames = async () => {
+      const gamelist = await getGames();
+      setGames(gamelist);
+    };
+    fetchGames();
+  }, []);
+
   return (
     <div id="home-container">
-      <Header />
       <div className="game-list">
-        {gameSection}
         <Link id="new-game-button-container" to="/game-form">
           <button id="new-game-button">+</button>
         </Link>
+        <Games games={games} />
       </div>
-      <Footer />
     </div>
   );
 }
