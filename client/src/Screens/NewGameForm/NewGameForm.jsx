@@ -1,12 +1,12 @@
 import { useState } from "react";
-import axios from "axios";
+import { postGame } from "../../services/games";
 import { Link } from "react-router-dom";
 
 function Form() {
   const [gameName, setGameName] = useState("");
   const [gameImage, setGameImage] = useState("");
-  const [gamePlatforms, setGamePlatforms] = useState("");
-  const [gameDevelop, setGameDevelop] = useState("");
+  const [gameSummary, setGameSummary] = useState("");
+  const [gameScreenshots, setGameScreenshots] = useState([]);
   const [gameGenres, setGameGenres] = useState("");
   const [gameRating, setGameRating] = useState("");
 
@@ -14,23 +14,15 @@ function Form() {
     e.preventDefault();
 
     const newGame = {
-      name: gameName,
-      images: gameImage,
-      platforms: gamePlatforms,
-      developer: gameDevelop,
+      title: gameName,
+      thumbnail: gameImage,
+      summary: gameSummary,
+      screenshot: gameScreenshots,
       genres: gameGenres,
       rating: gameRating,
     };
 
-    await axios.post(
-      "https://api.airtable.com/v0/appWBDWQi6vOuApxc/Table%201",
-      { fields: newGame },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
-        },
-      }
-    );
+    postGame(newGame)
   };
 
   return (
@@ -58,7 +50,7 @@ function Form() {
           name="gamePlatforms"
           id="game-platforms"
           value={gamePlatforms}
-          onChange={(e) => setGamePlatforms(e.target.value)}
+          onChange={(e) => setGameSummary(e.target.value)}
         />
         <label htmlFor="game-developer">Game developer:</label>
         <input
@@ -66,7 +58,7 @@ function Form() {
           name="gameDevelop"
           id="game-developer"
           value={gameDevelop}
-          onChange={(e) => setGameDevelop(e.target.value)}
+          onChange={(e) => setGameScreenshots(e.target.value)}
         />
         <label htmlFor="game-genres">Game genres:</label>
         <input

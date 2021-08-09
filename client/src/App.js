@@ -4,7 +4,7 @@ import GamesHome from "./Screens/GamesHome/GamesHome.jsx";
 import Form from "./Screens/NewGameForm/NewGameForm.jsx";
 import Details from "./Screens/GameDetails/GameDetails.jsx";
 import "./App.css";
-import { Route } from "react-router";
+import { Route, useHistory } from "react-router";
 import {
   loginUser,
   registerUser,
@@ -49,13 +49,13 @@ function App() {
         <Form />
       </Route>
       <Route exact path="./:name">
-        <Details gameList={gameList} />
+        <Details />
       </Route>
       <Route exact path="/">
-        <Genres filteredGames={setGameList} games={gameList} />
+        <Genres />
       </Route>
       <Route exact path="/">
-        <GamesHome games={gameList} />
+        <GamesHome />
       </Route>
     </div>
   );
