@@ -1,7 +1,9 @@
+import "./Footer.css"
+
 function Footer(props) {
   return (
-    <div>
-      <footer>2021</footer>
+    <div id="footer">
+      Lets Play 2021
     </div>
   );
 }
