@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import Layout from "./Components/Layout/Layout.jsx";
 import Genres from "./Components/Genres/Genres.jsx";
 import GamesHome from "./Screens/GamesHome/GamesHome.jsx";
-import Form from "./Screens/NewGameForm/NewGameForm.jsx";
+import NewGameForm from "./Screens/NewGameForm/NewGameForm.jsx";
 import Details from "./Screens/GameDetails/GameDetails.jsx";
 import "./App.css";
 import { Route, useHistory } from "react-router";
@@ -11,6 +12,8 @@ import {
   removeToken,
   verifyUser,
 } from "./services/auth";
+import SignUp from "./Screens/SignUp/SignUp.jsx";
+import Login from "./Screens/Login/Login.jsx";
 
 
 function App() {
@@ -45,18 +48,26 @@ function App() {
 
   return (
     <div className="main">
-      <Route path="/game-form">
-        <Form />
-      </Route>
-      <Route exact path="./:name">
-        <Details />
-      </Route>
-      <Route exact path="/">
-        <Genres />
-      </Route>
-      <Route exact path="/">
-        <GamesHome />
-      </Route>
+      <Layout user={currentUser} logout={handleLogout}>
+        <Route exact path="/">
+          <GamesHome />
+        </Route>
+        <Route path="/signup">
+          <SignUp handleSignUp={handleSignUp}/>
+        </Route>
+        <Route path="/login">
+          <Login login={handleLogin} />;
+        </Route>
+        <Route path="/game-form">
+          <NewGameForm user={currentUser}/>
+        </Route>
+        <Route exact path="./:name">
+          <Details />
+        </Route>
+        <Route exact path="/">
+          <Genres />
+        </Route>
+      </Layout>
     </div>
   );
 }
