@@ -1,6 +1,45 @@
 #nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: black;
     top: 1;
-    height: 50px;
+    height: 30px;
     width: 100%;
+}
+
+#home-icon{
+    height: 40px;
+    width: 40px;
+}
+
+#nav-user-info{
+    display: inherit;
+}
+
+#user-links-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#logout{
+    background: none;
+    border: none;
+    color: brown;
+}
+
+#logout:hover{
+    transition: 0.5s;
+    color: orange;
+}
+
+.user-links{
+    color: brown;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.user-links:hover{
+    transition: 0.5s;
+    color: orange;
 }

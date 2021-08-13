@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./Header.css";
+import gameLogo from "../../assets/Lets-Play-Logo.png"
+
 
 function Header({ user, logout }) {
   const authenticatedOptions = (
@@ -11,11 +13,11 @@ function Header({ user, logout }) {
   );
 
   const unauthenticatedOptions = (
-    <div className="user-links">
-      <NavLink className="links" to="/signup">
+    <div className="user-links-container">
+      <NavLink className="user-links" to="/signup">
         Sign Up
       </NavLink>
-      <NavLink className="links" to="/login">
+      <NavLink className="user-links" to="/login">
         Login
       </NavLink>
     </div>
@@ -24,11 +26,11 @@ function Header({ user, logout }) {
   return (
     <div id="nav">
       <NavLink to="/">
-        <img id="home-icon" src="../../assets/Lets-Play-Logo.png"></img>
+        <img id="home-icon" src={gameLogo}></img>
       </NavLink>
-      <div className="nav-user-info">
+      <div id="nav-user-info">
         {user ? authenticatedOptions : unauthenticatedOptions}
-        {user && <div>Welcome bak {user.username}!</div>}
+        {user && <div className="user-links">Welcome back {user.username}!</div>}
       </div>
     </div>
   );
