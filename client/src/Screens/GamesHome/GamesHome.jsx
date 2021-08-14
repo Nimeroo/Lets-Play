@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getGames } from "../../services/games.js";
 import Games from "../../Components/Games/Games.jsx"
+import "./GamesHome.css"
 
 function GamesHome() {
 
@@ -17,14 +18,14 @@ function GamesHome() {
 
   return (
     <div id="home-container">
-      <div className="game-list">
         <Link id="new-game-button-container" to="/game-form">
-          <button id="new-game-button">+</button>
+          <button id="new-game-button">Add Your Creation</button>
         </Link>
+      <div className="game-list">
         <Games games={games} />
       </div>
     </div>
   );
-}
+} 
 
 export default GamesHome;

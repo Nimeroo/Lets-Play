@@ -1,0 +1,17 @@
+
+#new-game-button{
+    color: brown;
+    background-color: black;
+    width: 150px;
+    height: 40px;
+    margin: 30px;
+    margin-right: 90px;
+    border: none;
+    border-radius: 30px;
+  }    
+
+#new-game-button:hover{
+  cursor: pointer;
+  transition: 1s;
+  color: orange;
+}
