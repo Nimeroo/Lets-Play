@@ -1,4 +1,6 @@
 import { useParams, Link } from "react-router-dom";
+import React from "react";
+import "./Genres.css"
 
 function Genres(props) {
   const games = props.games;

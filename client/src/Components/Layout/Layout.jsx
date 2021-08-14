@@ -7,7 +7,9 @@ export default function Layout(props) {
     return (
         <div id="layout-container">
             <Header user={props.user} logout={props.logout} />
-            {props.children}
+                <div id="main-container">
+                    {props.children}
+                </div>
             <Footer />
         </div>
     )

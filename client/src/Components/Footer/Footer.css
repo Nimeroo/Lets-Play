@@ -1,6 +1,8 @@
 #footer{
     background-color: black;
     color: brown;
+    position: relative;
+    height: 20px;
     width: 100%;
     bottom: 0;
 }
