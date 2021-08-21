@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import genres from "../../util/genres.js";
 import React from "react";
 import "./Genres.css"
 
@@ -18,63 +19,14 @@ function Genres(props) {
 
   return (
     <div className="genre-list">
+      {genres.map((genre) => {
+      return(
       <button
         className="genre-button"
-        onClick={() => compareCatagories("Adventure")}
+        onClick={() => compareCatagories({genre})}
       >
-        Adventure
-      </button>
-      <button
-        className="genre-button"
-        onClick={() => compareCatagories("Action")}
-      >
-        Action
-      </button>
-      <button className="genre-button" onClick={() => compareCatagories("RPG")}>
-        RPG
-      </button>
-      <button className="genre-button" onClick={() => compareCatagories("FPS")}>
-        FPS
-      </button>
-      <button className="genre-button" onClick={() => compareCatagories("TPS")}>
-        TPS
-      </button>
-      <button
-        className="genre-button"
-        onClick={() => compareCatagories("Battle Royale")}
-      >
-        Battle Royale
-      </button>
-      <button
-        className="genre-button"
-        onClick={() => compareCatagories("Simulation")}
-      >
-        Simulation
-      </button>
-      <button
-        className="genre-button"
-        onClick={() => compareCatagories("Social")}
-      >
-        Social
-      </button>
-      <button
-        className="genre-button"
-        onClick={() => compareCatagories("Fighter")}
-      >
-        Fighter
-      </button>
-      <button
-        className="genre-button"
-        onClick={() => compareCatagories("Sandbox")}
-      >
-        Sandbox
-      </button>
-      <button
-        className="genre-button"
-        onClick={() => compareCatagories("Platform game")}
-      >
-        Platformer
-      </button>
+        {genre}
+      </button>)})}
     </div>
   );
 }
