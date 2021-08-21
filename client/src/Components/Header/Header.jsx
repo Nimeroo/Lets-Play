@@ -5,11 +5,11 @@ import gameLogo from "../../assets/Lets-Play-Logo.png"
 
 function Header({ user, logout }) {
   const authenticatedOptions = (
-    <>
+    <NavLink className="user-links" exact to="/">
       <button onClick={logout} className="links" id="logout">
         Logout
       </button>
-    </>
+    </NavLink>
   );
 
   const unauthenticatedOptions = (

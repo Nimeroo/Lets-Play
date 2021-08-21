@@ -9,8 +9,13 @@
 }
 
 #home-icon{
-    height: 40px;
+    height: 30px;
     width: 40px;
+}
+
+#home-icon:hover{
+    transition: 0.5s;
+    background-color: orange ;
 }
 
 #nav-user-info{
@@ -31,6 +36,7 @@
 #logout:hover{
     transition: 0.5s;
     color: orange;
+    cursor: pointer;
 }
 
 .user-links{
@@ -42,4 +48,5 @@
 .user-links:hover{
     transition: 0.5s;
     color: orange;
+    cursor: pointer;
 }
