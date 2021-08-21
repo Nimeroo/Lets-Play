@@ -1,4 +1,5 @@
 import React from "react";
+import "./Games.css";
 
 export default function Games({ games }) {
   return (
@@ -7,7 +8,7 @@ export default function Games({ games }) {
         return (
           <div>
             <h1>{game.title}</h1>
-            <img>{game.thumbnail}</img>
+            <img id="game-thumbnail" src={game.thumbnail}/>
           </div>
         );
       })}
