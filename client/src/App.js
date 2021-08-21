@@ -50,7 +50,7 @@ function App() {
     <div className="main">
       <Layout user={currentUser} logout={handleLogout}>
         <Route exact path="/">
-          <GamesHome />
+          <GamesHome user={currentUser}/>
         </Route>
         <Route path="/signup">
           <SignUp handleSignUp={handleSignUp}/>
@@ -63,9 +63,6 @@ function App() {
         </Route>
         <Route exact path="./:name">
           <Details />
-        </Route>
-        <Route exact path="/">
-          <Genres />
         </Route>
       </Layout>
     </div>
