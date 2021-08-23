@@ -1,7 +1,7 @@
 import "./Login.css";
 import { useState } from "react";
 
-const Login = ({login}) => {
+const Login = ({ login }) => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -18,13 +18,13 @@ const Login = ({login}) => {
   };
 
   return (
-    <div className="login-div">
+    <div id="login-div">
       <form
         onSubmit={(e) => {
           e.preventDefault();
           login(formData);
         }}
-        className="login-form-container"
+        id="login-form-container"
       >
         <h4 id="login-title">Login</h4>
         <label>
@@ -48,7 +48,7 @@ const Login = ({login}) => {
         <button id="login-button" type="submit">
           Login
         </button>
-        <a className="signup-redirect" href="/signup">
+        <a id="signup-redirect" href="/signup">
           New to Game Station? Click to here to sign up!
         </a>
       </form>

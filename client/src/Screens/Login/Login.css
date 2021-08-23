@@ -1,0 +1,41 @@
+#login-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+#login-form-container {
+    background-color: darkgray;
+    box-shadow: 1px 5px 3px brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+}
+
+#login-button{
+    background-color: black;
+    color: brown;
+    border: none;
+    border-radius: 30px;
+    width: 60px;
+    margin: 10px;
+}
+
+#login-button:hover{
+    cursor: pointer;
+    transition: 1s;
+    color: orange;
+}
+
+#signup-redirect{
+    color: brown;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#signup-redirect:hover{
+    text-decoration: underline;
+}
