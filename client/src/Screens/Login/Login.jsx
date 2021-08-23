@@ -48,7 +48,7 @@ const Login = ({ login }) => {
         <button id="login-button" type="submit">
           Login
         </button>
-        <a id="signup-redirect" href="/signup">
+        <a className="redirect" href="/signup">
           New to Game Station? Click to here to sign up!
         </a>
       </form>

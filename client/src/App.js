@@ -56,7 +56,7 @@ function App() {
           <SignUp handleSignUp={handleSignUp}/>
         </Route>
         <Route path="/login">
-          <Login login={handleLogin} />;
+          <Login login={handleLogin} />
         </Route>
         <Route path="/game-form">
           <NewGameForm user={currentUser}/>

@@ -30,12 +30,4 @@
     color: orange;
 }
 
-#signup-redirect{
-    color: brown;
-    text-decoration: none;
-    font-size: 12px;
-}
 
-#signup-redirect:hover{
-    text-decoration: underline;
-}
