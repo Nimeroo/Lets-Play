@@ -1,0 +1,57 @@
+#form-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    height: 90%;
+    text-align: center;
+}
+
+#form{
+    background-color: darkgray;
+    box-shadow: 1px 5px 3px brown;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 85%;
+    flex-direction: column;
+}
+
+.form-input{
+    border: solid 1px brown;
+    border-radius: 5px;
+}
+
+.game-image-selector{
+    width: 185px;
+}
+
+#game-summary{
+    height: 50px;
+    width: 400px;
+}
+
+#form-buttons-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-button{
+    background-color: black;
+    color: brown;
+    border: none;
+    border-radius: 30px;
+}
+
+.form-button:hover{
+    cursor: pointer;
+    transition: 1s;
+    color: orange;
+}
+
+#game-submit-button{
+    width: 150px;
+    height: 20px;
+    margin-bottom: 10px;
+}

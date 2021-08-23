@@ -21,18 +21,19 @@ const SignUp = (props) => {
   };
 
   return (
-    <div className="signup-div">
+    <div id="signup-div">
       <form
-        className="signup-form-container"
+        id="signup-form-container"
         onSubmit={(e) => {
           e.preventDefault();
           props.handleSignUp(formData);
         }}
       >
         <h3 id="signup-title">Sign-Up</h3>
-        <label>
+        <label htmlFor="username">
           Username:
           <input
+            className="signup-input"
             type="text"
             name="username"
             value={username}
@@ -40,9 +41,10 @@ const SignUp = (props) => {
           />
         </label>
 
-        <label>
+        <label htmlFor="email">
           Email:
           <input
+            className="signup-input"
             type="text"
             name="email"
             value={email}
@@ -50,9 +52,10 @@ const SignUp = (props) => {
           />
         </label>
 
-        <label>
+        <label htmlFor="password">
           Password:
           <input
+            className="signup-input"
             type="password"
             name="password"
             value={password}
@@ -60,9 +63,10 @@ const SignUp = (props) => {
           />
         </label>
 
-        <label>
+        <label htmlFor="password_confirmation">
           Confirm Password:
           <input
+            className="signup-input"
             type="password"
             name="password_confirmation"
             value={password_confirmation}
@@ -71,9 +75,9 @@ const SignUp = (props) => {
         </label>
 
         <button id="signup-button" type="submit">
-          Submit
+          Sign Up
         </button>
-        <a className="login-redirect" href="/login">
+        <a className="redirect" href="/login">
           Already have an account? Click to here to login!
         </a>
       </form>

@@ -1,14 +1,19 @@
+import { Checkbox } from "@material-ui/core";
+import genres from "../../util/genres.js";
+import "./NewGameform.css";
 import { useState } from "react";
 import { postGame } from "../../services/games";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-function Form() {
+function NewGameForm({ user }) {
   const [gameName, setGameName] = useState("");
   const [gameImage, setGameImage] = useState("");
   const [gameSummary, setGameSummary] = useState("");
   const [gameScreenshots, setGameScreenshots] = useState([]);
-  const [gameGenres, setGameGenres] = useState("");
-  const [gameRating, setGameRating] = useState("");
+  const [gameGenres, setGameGenres] = useState([]);
+  const [gameRating, setGameRating] = useState(0);
+
+  let history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,71 +25,100 @@ function Form() {
       screenshot: gameScreenshots,
       genres: gameGenres,
       rating: gameRating,
+      user_id: user.id,
     };
 
-    postGame(newGame)
+    postGame(newGame);
+    history.push("/")
   };
 
   return (
-    <div className="form-container">
-      <form className="form" onSubmit={handleSubmit}>
-        <label htmlFor="game-name">Game Name:</label>
-        <input
-          type="text"
-          name="gameName"
-          id="game-name"
-          value={gameName}
-          onChange={(e) => setGameName(e.target.value)}
-        />
-        <label htmlFor="game-image">Game image link:</label>
-        <input
-          type="text"
-          name="gameImage"
-          id="game-image"
-          value={gameImage}
-          onChange={(e) => setGameImage(e.target.value)}
-        />
-        <label htmlFor="game-platforms">Game platforms:</label>
-        <input
-          type="text"
-          name="gamePlatforms"
-          id="game-platforms"
-          value={gamePlatforms}
-          onChange={(e) => setGameSummary(e.target.value)}
-        />
-        <label htmlFor="game-developer">Game developer:</label>
-        <input
-          type="text"
-          name="gameDevelop"
-          id="game-developer"
-          value={gameDevelop}
-          onChange={(e) => setGameScreenshots(e.target.value)}
-        />
-        <label htmlFor="game-genres">Game genres:</label>
-        <input
-          type="text"
-          name="gameGenres"
-          id="game-genres"
-          value={gameGenres}
-          onChange={(e) => setGameGenres(e.target.value)}
-        />
-        <label htmlFor="game-rating">Game rating:</label>
-        <input
-          type="text"
-          name="gameGenres"
-          id="game-rating"
-          value={gameRating}
-          onChange={(e) => setGameRating(e.target.value)}
-        />
-        <button id="game-submit-button" type="submit">
-          Submit your game!
-        </button>
-        <Link exact to="/">
-          <button>home</button>
-        </Link>
+    <div id="form-container">
+      <form id="form" onSubmit={handleSubmit}>
+        <label htmlFor="game-title">
+          Title:
+          <input
+            type="text"
+            name="gameName"
+            id="game-name"
+            className="form-input"
+            value={gameName}
+            onChange={(e) => setGameName(e.target.value)}
+          />
+        </label>
+        <label htmlFor="gameImage">
+          Thumbnail:
+          <input
+            type="file"
+            name="gameImage"
+            className="game-image-selector"
+            accept="image/png, image/jpeg, image/jpg"
+            value={gameImage}
+            onChange={(e) => setGameImage(e.target.value)}
+          />
+        </label>
+        <label htmlFor="game-platforms">
+          Summary:
+          <textarea
+            type="text"
+            name="gameSummary"
+            id="game-summary"
+            className="form-input"
+            value={gameSummary}
+            onChange={(e) => setGameSummary(e.target.value)}
+          />
+        </label>
+        <label htmlFor="game-screenshots">
+          Game Images/Screenshots:
+          <div id="game-screenshot-input">
+            <input
+              type="file"
+              name="gameScreenshots"
+              id="game-screenshots"
+              className="game-image-selector"
+              onChange={(e) => {
+                gameScreenshots.push(e.target.value);
+                setGameScreenshots(gameScreenshots);
+              }}
+            />
+            <div id="screenshot-preview-cont">
+              {gameScreenshots.map((screenshotURL) => {
+                return <img id="screenshot-preview" src={screenshotURL}></img>;
+              })}
+            </div>
+          </div>
+        </label>
+        <label>
+          {genres.map((genre) => {
+            return (
+              <div>
+                {genre}
+                <Checkbox
+                  name="gameGenres"
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      gameGenres.push(genre);
+                      setGameGenres(gameGenres);
+                    } else {
+                      gameGenres.splice(gameGenres.indexOf(genre), 1);
+                      setGameGenres(gameGenres);
+                    }
+                  }}
+                />
+              </div>
+            );
+          })}
+        </label>
+        <div id="form-buttons-container">
+          <button className="form-button" id="game-submit-button" type="submit">
+            Publish your game
+          </button>
+
+          <button className="form-button">Home</button>
+        </div>
       </form>
     </div>
   );
 }
 
-export default Form;
+export default NewGameForm;

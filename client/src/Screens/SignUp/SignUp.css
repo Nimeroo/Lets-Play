@@ -1,0 +1,36 @@
+#signup-div{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#signup-form-container{
+    background-color: darkgray;
+    box-shadow: 1px 5px 3px brown;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
+    height: 450px;
+}
+
+.signup-input{
+    border: solid 1px brown;
+    border-radius: 5px;
+}
+
+#signup-button{
+    background-color: black;
+    color: brown;
+    border: none;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+#signup-button:hover{
+    cursor: pointer;
+    transition: 1s;
+    color: orange;
+}
