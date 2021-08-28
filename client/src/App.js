@@ -61,7 +61,7 @@ function App() {
         <Route path="/game-form">
           <NewGameForm user={currentUser}/>
         </Route>
-        <Route exact path="./:name">
+        <Route exact path="/:user_id/:id">
           <Details />
         </Route>
       </Layout>
