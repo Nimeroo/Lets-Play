@@ -1,4 +1,25 @@
+#game-list{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 150px;
+    row-gap: 30px;
+    margin-top: 20px;
+    margin-left: 50px;
+    width: inherit;
+    height: 80%;
+}
+
+#game{
+    background: darkgray;
+    width: 200px;
+    height: 200px;
+}
+
+#game-title{
+    margin-bottom: none;
+}
+
 #game-thumbnail{
-    width: 120px;
-    height: 150px;
+    width: 150px;
+    height: 120px;
 }

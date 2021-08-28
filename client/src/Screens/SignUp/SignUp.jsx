@@ -1,6 +1,7 @@
 import React from "react";
 import "./SignUp.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignUp = (props) => {
   const [formData, setFormData] = useState({
@@ -77,9 +78,9 @@ const SignUp = (props) => {
         <button id="signup-button" type="submit">
           Sign Up
         </button>
-        <a className="redirect" href="/login">
+        <Link to="/login" className="redirect">
           Already have an account? Click to here to login!
-        </a>
+        </Link>
       </form>
     </div>
   );

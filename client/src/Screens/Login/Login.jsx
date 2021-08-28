@@ -1,5 +1,6 @@
 import "./Login.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = ({ login }) => {
   const [formData, setFormData] = useState({
@@ -48,9 +49,9 @@ const Login = ({ login }) => {
         <button id="login-button" type="submit">
           Login
         </button>
-        <a className="redirect" href="/signup">
+        <Link to="/signup" className="redirect">
           New to Game Station? Click to here to sign up!
-        </a>
+        </Link>
       </form>
     </div>
   );

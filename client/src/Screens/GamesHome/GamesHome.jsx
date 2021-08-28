@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getGames } from "../../services/games.js";
-import Games from "../../Components/Games/Games.jsx"
+import Games from "../../Components/Games/Games.jsx";
 import Genres from "../../Components/Genres/Genres.jsx";
-import "./GamesHome.css"
+import "./GamesHome.css";
 
-function GamesHome({user}) {
-
-  const [games, setGames] = useState([])
+function GamesHome({ user }) {
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
     const fetchGames = async () => {
@@ -18,22 +17,22 @@ function GamesHome({user}) {
   }, []);
 
   const userVerify = () => {
-    let newGameRedirect = ""
-    user ? newGameRedirect = "/game-form" : newGameRedirect = "/login";
+    let newGameRedirect = "";
+    user ? (newGameRedirect = "/game-form") : (newGameRedirect = "/login");
     return newGameRedirect;
-  }
+  };
 
   return (
     <div id="home-container">
       <Genres />
+      <div id="game-options">
         <Link id="new-game-button-container" to={userVerify}>
           <button id="new-game-button">Add Your Creation</button>
         </Link>
-      <div className="game-list">
         <Games games={games} />
       </div>
     </div>
   );
-} 
+}
 
 export default GamesHome;

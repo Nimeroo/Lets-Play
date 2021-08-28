@@ -3,11 +3,11 @@ import "./Games.css";
 
 export default function Games({ games }) {
   return (
-    <div>
+    <div id="game-list">
       {games.map((game) => {
         return (
-          <div>
-            <h1>{game.title}</h1>
+          <div id="game">
+            <h4 id="game-title" >{game.title}</h4>
             <img id="game-thumbnail" src={game.thumbnail}/>
           </div>
         );
